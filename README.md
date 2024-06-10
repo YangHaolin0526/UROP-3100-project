@@ -33,10 +33,10 @@ To get started with this project, follow these steps:
     ```
 
 2. **Install Dependencies**
-    Ensure you have Python and the required packages installed. You can install the dependencies using:
-    For Fine-tuning the model:
+    Ensure you have Python and the required packages installed. 
+    For Fine-tuning the model, you can install the dependencies using:
     ```bash
-    pip install -r requirements.txt
+    pip install -r fine-tune_requirements.txt
     ```
 
 4. **Prepare Data**
