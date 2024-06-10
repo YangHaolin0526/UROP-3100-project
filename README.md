@@ -28,29 +28,32 @@ To get started with this project, follow these steps:
 
 1. **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/UROP-3100-project.git
+    git clone https://github.com/YangHaolin0526/UROP-3100-project.git
     cd UROP-3100-project
     ```
 
 2. **Install Dependencies**
     Ensure you have Python and the required packages installed. You can install the dependencies using:
+    For Fine-tuning the model:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Prepare Data**
+4. **Prepare Data**
     Download and preprocess the StructLM dataset:
     ```bash
-    python scripts/preprocess_data.py
+    python Format_t.py
     ```
 
-4. **Fine-Tune the Model**
+5. **Fine-Tune the Model**
     Run the fine-tuning script using LMFlow and LoRA:
     ```bash
-    python scripts/fine_tune.py
+    deepspeed --include localhost:8,9 ./examples/finetune.py --model_name_or_path mistralai/Mistral-7B-v0.1 --dataset_path data/Struct/train --output_dir output_models/finetuned_Mistral_StructLM --overwrite_output_dir --num_train_epochs 0.01 --learning_rate 1e-4 --block_size 512 --per_device_train_batch_size 1 --use_lora 1 --lora_r 8 --save_aggregated_lora 1 --deepspeed ./configs/ds_config_zero2.json  --fp16 —run_name
+finetune_with_lora --validation_split_percentage 0 --logging_steps 20 --do_train     
+-- ddp_timeout 72000 --save_steps 5000 --dataloader_num_workers 1
     ```
 
-5. **Evaluate the Model**
+6. **Evaluate the Model**
     After fine-tuning, evaluate the model performance on the validation set:
     ```bash
     python scripts/evaluate.py
