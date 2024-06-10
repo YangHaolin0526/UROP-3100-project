@@ -16,6 +16,8 @@ Typical usage example:
 
 import sys
 import os
+from transformers import AutoModel
+token = os.getenv("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")
 sys.path.remove(os.path.abspath(os.path.dirname(sys.argv[0])))
 from transformers import HfArgumentParser
 
