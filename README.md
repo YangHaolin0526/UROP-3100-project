@@ -29,6 +29,8 @@ To get started with this project, follow these steps:
 1. **Clone the repository**
     ```bash
     git clone https://github.com/YangHaolin0526/UROP-3100-project.git
+    ```
+    ```bash
     cd UROP-3100-project
     ```
 
@@ -43,6 +45,8 @@ To get started with this project, follow these steps:
     Download and preprocess the StructLM dataset:
     ```bash
     huggingface-cli download --repo-type=dataset --local-dir=data/processed/ TIGER-Lab/SKGInstruct ./skginstruct_test_file_7b.json
+    ```
+    ```bash
     python Format_t.py
     ```
 
