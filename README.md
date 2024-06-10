@@ -61,7 +61,7 @@ finetune_with_lora --validation_split_percentage 0 --logging_steps 20 --do_train
 6. **Evaluate the Model**
     After fine-tuning, evaluate the model performance on the validation set:
     ```bash
-    python scripts/evaluate.py
+    ./run_test_eval.sh finetuned_Mistral_Lora_StructLM
     ```
 
 ## Contributing
