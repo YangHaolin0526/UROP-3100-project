@@ -42,6 +42,7 @@ To get started with this project, follow these steps:
 4. **Prepare Data**
     Download and preprocess the StructLM dataset:
     ```bash
+    huggingface-cli download --repo-type=dataset --local-dir=data/processed/ TIGER-Lab/SKGInstruct ./skginstruct_test_file_7b.json
     python Format_t.py
     ```
 
