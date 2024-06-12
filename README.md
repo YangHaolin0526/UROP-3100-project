@@ -62,7 +62,7 @@ To get started with this project, follow these steps:
     ```
     Run the fine-tuning script using Full:
     ```bash
-    deepspeed --include localhost:0,1,2,3 --master_port=11000 examples/finetune.py --model_name_or_path mistralai/Mistral-7B-v0.1 --dataset_path data/Struct/train --output_dir output_models/finetuned_Mistral_Full_StructLM --overwrite_output_dir --num_train_epochs 0.01 --learning_rate 2e-5 --disable_group_texts 1 --block_size 256 --per_device_train_batch_size 1 --deepspeed configs/ds_config_zero3.json --fp16 --run_name finetune --validation_split_percentage 0 --logging_steps 20 --do_train --ddp_timeout 72000  --save_steps 5000 --dataloader_num_workers 1
+    deepspeed --include localhost:0,1,2,3 --master_port=11000 examples/finetune.py --model_name_or_path mistralai/Mistral-7B-v0.1 --dataset_path data/Struct/train --output_dir output_models/finetuned_Mistral_Full_StructLM --overwrite_output_dir --num_train_epochs 0.01 --learning_rate 2e-5 --disable_group_texts 1 --block_size 256 --per_device_train_batch_size 1 --deepspeed configs/ds_config_zero3.json --fp16 --run_name finetune --validation_split_percentage 0 --logging_steps 20 --do_train --ddp_timeout 72000 --save_steps 5000 --dataloader_num_workers 1
     ```
 
 6. **Evaluate the Model**
