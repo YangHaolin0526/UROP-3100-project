@@ -70,6 +70,9 @@ To get started with this project, follow these steps:
     ```bash
     ./run_test_eval.sh finetuned_Mistral_Lora_StructLM
     ```
+    ```bash
+    ./run_test_eval.sh finetuned_Mistral_Full_StructLM
+    ```
 
 ## Contributing
 Contributions to the project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
