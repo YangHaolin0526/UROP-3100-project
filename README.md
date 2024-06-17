@@ -45,6 +45,7 @@ To get started with this project, follow these steps:
     ```bash
     pip install -r eval_requirements.txt
     ```
+    Reminder: Please create 2 conda virtual environments for these 2 tasks.
 
 4. **Prepare Data**
     Download and preprocess the StructLM dataset:
@@ -64,6 +65,7 @@ To get started with this project, follow these steps:
     ```bash
     deepspeed --include localhost:0,1,2,3 --master_port=11000 examples/finetune.py --model_name_or_path mistralai/Mistral-7B-v0.1 --dataset_path data/Struct/train --output_dir output_models/finetuned_Mistral_Full_StructLM --overwrite_output_dir --num_train_epochs 0.01 --learning_rate 2e-5 --disable_group_texts 1 --block_size 256 --per_device_train_batch_size 1 --deepspeed configs/ds_config_zero3.json --fp16 --run_name finetune --validation_split_percentage 0 --logging_steps 20 --do_train --ddp_timeout 72000 --save_steps 5000 --dataloader_num_workers 1
     ```
+  Reminder: When using 4 4090, the training takes around 8 hours.
 
 6. **Evaluate the Model**
     After fine-tuning, evaluate the model performance on the validation set:
@@ -73,6 +75,7 @@ To get started with this project, follow these steps:
     ```bash
     ./run_test_eval.sh finetuned_Mistral_Full_StructLM
     ```
+    Reminder: When using 4 3090 GPU for evaluation, the eval_Bsize can only be 1 to avoid "out of memory", and the evaluation takes around 92 hours.
 
 ## Contributing
 Contributions to the project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
